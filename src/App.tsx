@@ -1,12 +1,33 @@
+import { useState } from "react";
+import {
+  uniqueNamesGenerator,
+  adjectives,
+  animals,
+} from "unique-names-generator";
+import "./App.css";
 
-import './App.css'
+export default function App() {
+  const [name, setName] = useState("");
 
-function App() {
+  const generateName = () => {
+    const randomName = uniqueNamesGenerator({
+      dictionaries: [adjectives, animals],
+      separator: " ",
+      style: "capital",
+    });
 
+    setName(randomName);
+  };
 
   return (
-    <div></div>
-  )
-}
+    <div className="app">
+      <h1>Random Name Generator</h1>
 
-export default App
+      <div className="result">
+        {name || "Click the button to generate a name"}
+      </div>
+
+      <button onClick={generateName}>Generate name</button>
+    </div>
+  );
+}
