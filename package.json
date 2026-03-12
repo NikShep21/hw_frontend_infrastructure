@@ -3,14 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
-      "eslint --fix"
-    ],
-    "*.{ts,tsx,js,jsx,json,css,md,html}": [
-      "prettier --write"
-    ]
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
