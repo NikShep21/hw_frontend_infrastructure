@@ -14,10 +14,17 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "format": "prettier --write .",
+    "format": "prettier --write --ignore-unknown .",
+    "format:check": "prettier --check --ignore-unknown .",
+    "format:files": "prettier --write --ignore-unknown",
+    "format:check:files": "prettier --check --ignore-unknown",
     "lint": "eslint .",
+    "lint:files": "eslint",
+    "lint:fix": "eslint --fix .",
+    "lint:fix:files": "eslint --fix",
     "preview": "vite preview",
     "prepare": "husky",
+    "typecheck": "tsc --noEmit",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
